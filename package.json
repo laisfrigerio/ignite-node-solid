@@ -1,10 +1,16 @@
 {
-  "name": "desafio",
+  "name": "ignite-node-solid",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "docker:build": "docker build -t ignite-node-solid --target prod .",
+    "docker:run": "docker run -p 127.0.0.1:49130:3333 -d ignite-node-solid",
+    "docker:build-test": "docker build -t ignite-node-solid-test --target test .",
+    "docker:test": "docker run -e CI=true ignite-node-solid-test",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "build": "tsc -p .",
+    "prod:start": "node build/src/server.js",
     "lint:fix": "eslint --fix . --ext ts,tsx",
     "test": "jest"
   },

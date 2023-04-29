@@ -14,8 +14,8 @@ describe("TurnUserAdminUseCase", () => {
 
   it("should be able to turn an user as admin", () => {
     const user = usersRepository.create({
-      name: "Joseph Oliveira",
-      email: "dogim@rocketseat.com",
+      name: "Bernando Oliveira",
+      email: "bernado.oliveira@rocketseat.com",
     });
 
     const updatedUser = turnUserAdminUseCase.execute({ user_id: user.id });
